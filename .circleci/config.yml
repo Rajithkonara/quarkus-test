@@ -41,6 +41,9 @@ jobs:
       # Standard maven build and test phases - does not perform a native build (or verify)
       # ########################
       - run:
+          - name: Set executable
+            command: chmod +x mvnw
+      - run:
           name: Build (Standard)
           command: ./mvnw clean package -DskipTests -Dmaven.test.skip=true
       - run:
