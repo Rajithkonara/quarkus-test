@@ -18,9 +18,6 @@ jobs:
       # Checkout the source code
       # ########################
       - checkout
-      - run:
-          - name: Set executable
-            command: chmod +x mvnw
 
       # Restore any files we may have cached
       # ########################
@@ -34,7 +31,7 @@ jobs:
       # ########################
       - run:
           name: Download Dependencies
-          command: chmod +x mvnw && mvn dependency:go-offline
+          command: chmod +mvnw && dependency:go-offline
       # Cache the maven dependencies
       - save_cache:
           paths:
