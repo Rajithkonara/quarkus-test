@@ -33,6 +33,9 @@ jobs:
       # Download maven dependencies so that we can cache them
       # ########################
       - run:
+          name: Set executable
+          command: chmod +x mvnw
+      - run:
           name: Download Dependencies
           command: mvn dependency:go-offline
       # Cache the maven dependencies
