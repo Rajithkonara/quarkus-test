@@ -31,7 +31,7 @@ jobs:
       # ########################
       - run:
           name: Download Dependencies
-          command: chmod +mvnw && dependency:go-offline
+          command: chmod +x mvnw && mvn dependency:go-offline
       # Cache the maven dependencies
       - save_cache:
           paths:
